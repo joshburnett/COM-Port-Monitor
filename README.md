@@ -1,5 +1,7 @@
 # COM Port Monitor
 
+![](example notification.png)
+
 Ever find yourself plugging and unplugging devices into your computer and needing to
 know their associated COM ports? I did, so I wrote COM Port Monitor.  All it does is keep track of COM ports that are added or removed, and shows helpful
 system notifications to let you know about it.
