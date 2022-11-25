@@ -15,3 +15,7 @@ for another day.
 Hope you find this helpful!
 
 _Josh_
+
+<a target="_blank" href="https://icons8.com/icon/QAmTCDyL5kmz/usb-disconnected">USB Disconnected</a> and
+<a target="_blank" href="https://icons8.com/icon/gJXyOBQKhSlv/usb-connected">USB Connected</a> icons by
+<a target="_blank" href="https://icons8.com">Icons8</a>
