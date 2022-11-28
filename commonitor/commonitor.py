@@ -19,7 +19,6 @@ class ComMonitor(QSystemTrayIcon):
     def __init__(self, icon, parent=None):
         QSystemTrayIcon.__init__(self, icon, parent)
 
-
         menu = QMenu(parent)
         exit_action = menu.addAction('Exit')
 
