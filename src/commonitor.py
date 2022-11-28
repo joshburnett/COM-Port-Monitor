@@ -42,7 +42,7 @@ class ComMonitor(QSystemTrayIcon):
             toast = ToastImageAndText2()
             toast.SetHeadline(port.device)
             toast.SetFirstLine('Device disconnected')
-            toast.SetImage("icons8-usb-disconnected-96.png")
+            toast.SetImage("icons/icons8-usb-disconnected-96.png")
             self.wintoaster.show_toast(toast)
 
         # Check for added devices
@@ -51,7 +51,7 @@ class ComMonitor(QSystemTrayIcon):
             toast = ToastImageAndText2()
             toast.SetHeadline(port.device)
             toast.SetFirstLine('Device connected')
-            toast.SetImage("icons8-usb-connected-96.png")
+            toast.SetImage("icons/icons8-usb-connected-96.png")
             self.wintoaster.show_toast(toast)
 
         self.ports = new_ports
@@ -61,7 +61,7 @@ def main():
     app = QApplication(sys.argv)
 
     w = QWidget()
-    tray_icon = ComMonitor(QIcon('system-monitor.png'), w)
+    tray_icon = ComMonitor(QIcon('icons/system-monitor.png'), w)
     tray_icon.show()
 
     sys.exit(app.exec())
