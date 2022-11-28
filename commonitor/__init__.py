@@ -6,4 +6,4 @@ Uses Qt (via PySide6) and windows_toasts.  Currently Windows-only.
 
 from .commonitor import *
 
-__version__ = '0.1.1'
+__version__ = '0.1.1.post1'
