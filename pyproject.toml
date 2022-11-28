@@ -1,0 +1,26 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "com-monitor"
+authors = [{name = "Josh Burnett", email = "josh@burnettsonline.org"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+dependencies = [
+    "windows_toasts",
+    "pyserial",
+    "PySide6"
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Home = "https://github.com/joshburnett/COM-Port-Monitor"
+
+[project.scripts]
+commonitor = "commonitor:main"
+
+[tool.flit.module]
+name = "commonitor"

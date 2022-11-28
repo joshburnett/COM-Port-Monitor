@@ -1,3 +1,9 @@
+"""
+ComMonitor: A small system tray utility that provides system notifications when COM port devices are added to or removed from the system.
+
+Uses Qt (via PySide6) and windows_toasts.  Currently Windows-only.
+"""
+
 import sys
 
 from windows_toasts import WindowsToaster, ToastImageAndText2
@@ -8,7 +14,10 @@ from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QWidget
 from PySide6.QtCore import QTimer
 
 
-class SystemTrayIcon(QSystemTrayIcon):
+__version__ = '0.1.0'
+
+
+class ComMonitor(QSystemTrayIcon):
     def __init__(self, icon, parent=None):
         QSystemTrayIcon.__init__(self, icon, parent)
         menu = QMenu(parent)
@@ -52,7 +61,7 @@ def main():
     app = QApplication(sys.argv)
 
     w = QWidget()
-    tray_icon = SystemTrayIcon(QIcon('system-monitor.png'), w)
+    tray_icon = ComMonitor(QIcon('system-monitor.png'), w)
     tray_icon.show()
 
     sys.exit(app.exec())
