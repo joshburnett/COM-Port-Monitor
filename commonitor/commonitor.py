@@ -5,6 +5,7 @@ Uses Qt (via PySide6) and windows_toasts.  Currently Windows-only.
 """
 
 import sys
+from pathlib import Path
 
 from windows_toasts import WindowsToaster, ToastImageAndText2
 from serial.tools.list_ports import comports
@@ -14,14 +15,13 @@ from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QWidget
 from PySide6.QtCore import QTimer
 
 
-__version__ = '0.1.0'
-
-
 class ComMonitor(QSystemTrayIcon):
     def __init__(self, icon, parent=None):
         QSystemTrayIcon.__init__(self, icon, parent)
+
+
         menu = QMenu(parent)
-        exit_action = menu.addAction("Exit")
+        exit_action = menu.addAction('Exit')
 
         self.setContextMenu(menu)
         exit_action.triggered.connect(QApplication.quit)
@@ -42,7 +42,7 @@ class ComMonitor(QSystemTrayIcon):
             toast = ToastImageAndText2()
             toast.SetHeadline(port.device)
             toast.SetFirstLine('Device disconnected')
-            toast.SetImage("icons/icons8-usb-disconnected-96.png")
+            toast.SetImage('icons/icons8-usb-disconnected-96.png')
             self.wintoaster.show_toast(toast)
 
         # Check for added devices
@@ -51,13 +51,16 @@ class ComMonitor(QSystemTrayIcon):
             toast = ToastImageAndText2()
             toast.SetHeadline(port.device)
             toast.SetFirstLine('Device connected')
-            toast.SetImage("icons/icons8-usb-connected-96.png")
+            toast.SetImage('icons/icons8-usb-connected-96.png')
             self.wintoaster.show_toast(toast)
 
         self.ports = new_ports
 
 
+# Entry point for script when installed via pip/pipx
 def main():
+    import os
+    os.chdir(Path(__file__).parent)
     app = QApplication(sys.argv)
 
     w = QWidget()
